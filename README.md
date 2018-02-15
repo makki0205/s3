@@ -6,5 +6,6 @@
 	if err != nil {
 		panic(err)
 	}
-	cli.Up("./s3.go", "hoge/s3.go")
+	// アップロードして公開する
+	cli.UpLoadPublic("./s3.go", "hoge/s3.go")
 ```
