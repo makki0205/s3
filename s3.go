@@ -81,7 +81,7 @@ func (f *S3) UpLoad(LocalPath string, S3Path string) error {
 func (f *S3) GetPreSignedUrl(S3Path string, expire time.Duration) (string, error) {
 	req, _ := f.svc.GetObjectRequest(&s3.GetObjectInput{
 		Bucket: aws.String(f.BucketName),
-		Key:    aws.String("S3Path"),
+		Key:    aws.String(S3Path),
 	})
 	url, err := req.Presign(expire)
 	if err != nil {
